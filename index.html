@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sit recusandae fuga minima natus facilis aliquam pariatur aliquid voluptate. Consequuntur quaerat sapiente explicabo voluptatibus sint, dolorem abo eius quo?
+    <h1>Toast demo</h1>
+    <br>
+    <button id="btn">click</button>
+    <h1>testing</h1>
+
+    <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Lorem s aperiam voluptate distinctio, nihil animi sequi recusandae fuga ducimus magni reiciendis molestiae! Eveniet dicta quo beatae autem incidunt, aut, earum at, praesentium dolorem delectus eaque.
+    </p>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="main.js"></script>
+<script>
+    let btn = document.getElementById('btn')
+    let designTypes=['moss','sunnyDays','anwar','plain','stripe','endlessRiver','instagram','ukraine','celestial','meredian']
+    let infot = ['danger','warning','success','ok','info','prohibited']
+
+    btn.addEventListener('click',()=>{
+        let tm=11
+        // notify({
+        //     message:"hello world!",
+        //     design:"plain"
+        // })
+        //designTypes.length
+        for(let i=0;i<1;++i)
+        toastKing({
+            duration:tm+i,
+            message:designTypes[i],
+            progressBarVis:true,
+            type:infot[i%infot.length],
+            design:designTypes[i],
+            stopOnFocus:true,
+            onClick:function(){
+                // location.href="https://google.com"
+            },
+            onDismiss:function(){
+                // alert('dismiss')
+               
+            }
+        })
+
+    });
+    btn.click()
+</script> 
+</html>
+<!-- <style>
+    body{
+        background-color: aquamarine;
+    }
+</style> -->
