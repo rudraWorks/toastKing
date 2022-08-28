@@ -14,7 +14,7 @@ progressDiv.style.userSelect="none"
 
 document.body.prepend(progressDiv)
 
-let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis) =>{
+let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis) =>{
     
     let t=document.createElement('div')
     let closeBtn = document.createElement('div')
@@ -83,13 +83,18 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     })
 
     t.style.width="90%"
-    t.style.marginBottom="20px"
+
     t.style.display="flex"
     t.style.backgroundColor="skyblue"
     
     if(borderVis)
     t.style.border="1px solid black"
-    t.style.boxShadow=" 5px 10px 9px #888888"
+    if(shadowVis)
+    {
+        t.style.boxShadow="5px 10px 9px #888888"
+        t.style.marginBottom="20px"
+    }
+    else t.style.marginBottom="10px"
     t.style.color="white"
     t.style.fontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
     t.addEventListener('click',onClick)
@@ -245,19 +250,20 @@ infoTypes['ok']='🆗'
 infoTypes['none']=''
 
 
-function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis})
+function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis})
 {   
     
-    if(!duration) duration=10    
-    if(!message) message=''
-    if(!progressBarVis)progressBarVis=true
-    if(!borderVis)borderVis=false 
-    if(!type)type='none'
-    if(!design)design='plain'
-    if(!stopOnFocus)stopOnFocus=true 
-    if(!onClick)onClick=function(){}
-    if(!onDismiss)onDismiss=function(){}
-
+    if(duration===undefined) duration=10    
+    if(message===undefined) message=''
+    if(progressBarVis===undefined)progressBarVis=true
+    if(borderVis===undefined)borderVis=false 
+    if(type===undefined)type='none'
+    if(design===undefined)design='plain'
+    if(stopOnFocus===undefined)stopOnFocus=true 
+    if(onClick===undefined)onClick=function(){}
+    if(onDismiss===undefined)onDismiss=function(){}
+    if(shadowVis===undefined)shadowVis=true
+   
     if(typeof duration === 'number' && isFinite(duration))
     {
         duration = (20/8)*duration
@@ -265,6 +271,6 @@ function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onCl
 
     type = infoTypes[type]
 
-    showToast(message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis)
+    showToast(message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis)
 }
 

@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToastKing</title>
+    <title>toastKing</title>
     <style>
         body{
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: url("https://img.freepik.com/free-photo/white-concrete-wall_53876-92803.jpg?w=740&t=st=1661697765~exp=1661698365~hmac=f6743643519d27896d1e23d9cb40c9ecc81dae5ff24e2e39c79593640daf5bf3");
+        }
+        img{
+            width: 90%;
         }
         #heading{
             text-align: center;
@@ -33,13 +37,16 @@
             margin: 10px;
             /* margin-right: auto; */
             padding: 10px;
-            width: 100px;
+            min-width: 100px;
             background-color: rgb(80, 233, 93);
             text-align: center;
             cursor: pointer;
             border-radius: 20px;
             color:white;
             user-select: none;
+        }
+        .play:hover{
+            background-color:rgb(57, 168, 66) ;
         }
         pre{
             margin-top: 30px;
@@ -64,39 +71,90 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         #designs>div{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin: 5px;
-            padding: 5px;
-            background-color: rgb(229, 232, 236);
+            padding: 10px;
+            background-color:burlywood;
             cursor: pointer;
             user-select: none;
+            border-radius: 15px;
+        }
+        #designs>div:hover{
+            background-color: rgb(177, 147, 109);
         }
         #types{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         #types>div{
-            border: 1px solid black;
             margin: 5px;
-            padding: 5px;
-            background-color: rgb(229, 232, 236);
+            padding: 10px;
+            background-color:burlywood;
             cursor: pointer;
             user-select: none;
+            border-radius: 15px;
+        }
+        #types>div:hover{
+            background-color: rgb(177, 147, 109);
+        }
+        #title{
+            font-size: 90px;
+            font-weight: 900;
+        }
+        @media screen and (max-width: 560px) {
+           #title{
+               font-size: 50px;
+               /* display: none; */
+           }
+        }
+        @media screen and (max-width: 366px) {
+           #title{
+               font-size: 40px;
+               /* display: none; */
+           }
         }
     </style>
 </head>
 <body>
-    <div id="heading"> <h1>ToastKing</h1>
-            <h4>ToastKing is a light-weight JavaScript library for creating non-blocking, beautiful notification messages.</h4>
+    <div id="heading"> <div id="title"> <span style="color: rgb(157, 157, 201);" >toastKing</span><span style="color: brown;" >.</span><span style="color: red;">js</span></div>
+    <br>
+            <div>toastKing is a light-weight JavaScript library for creating non-blocking, beautiful notification messages.</div>
     </div>
 
+    <br>
 
     <div class="container">
+        <div style="display: flex;">
+                    <div class="play" onclick="demo()">demo</div>
+                    <div class="play" onclick="demo()">star this project</div>
+        </div>
 
-        <div class="play" onclick="demo()">demo</div>
+
+        <div>
+            <pre>
+
+    toastKing({                  
+        message:'hello globe!',     
+        duration:5,
+        progressBarVis:true,
+        borderVis:false,
+        shadowVis:true,
+        type:'success',
+        design:'plain',
+        stopOnFocus:true,
+        onClick:function(){},
+        onDismiss:function(){}
+    })
+            </pre>
+        </div>
+
 
         <div>
             <h3 style="text-align: center;">All values of <i>design</i> attribute </h3>
@@ -126,26 +184,11 @@
             </div>
         </div>
 
-        <div>
-            <pre>
-
-    toastKing({                  
-        message:'hello globe!',     
-        duration:5,
-        progressBarVis:true,
-        borderVis:false,
-        type:'success',
-        design:'plain',
-        stopOnFocus:true,
-        onClick:function(){},
-        onDismiss:function(){}
-    })
-            </pre>
-        </div>
 
 
         <div>
-            <h3 style="text-align: center;">Default values</h3>
+            <h3 style="text-align: center;">Default values of the attributes</h3>
+            <center>
             <table>
                 <tr>
                     <th>Attribute</th><th>Value</th>
@@ -161,6 +204,9 @@
                 </tr>
                 <tr>
                     <td>borderVis</td><td>false</td>
+                </tr>
+                <tr>
+                    <td>shadowVis</td><td>true</td>
                 </tr>
                 <tr>
                     <td>type</td><td>"none"</td>
@@ -179,18 +225,27 @@
                 </tr>
             </table>
 
+            <br>
+            <img src="./res/Untitled.png"
+            </center>
 
         </div>
         <div>
             <h3 style="text-align: center;">Installation: Put the following line at the end of body tag </h3>
-            <div style="background-color: lightcoral; padding: 5px;">  &lt script  &gt src="https://rudraworks.github.io/toastKing/main.js"  &lt /script  &gt </div>
+            <div id="src"  style="background-color: rgb(43, 9, 75);
+            padding: 10px;
+            word-break: break-all;
+            color: white;">  &lt script  &gt src="https://rudraworks.github.io/toastKing/main.js"  &lt /script  &gt </div><br>
         </div>
     </div>
 
+    <br><br>
 
 </body>
-<script src="https://rudraworks.github.io/toastKing/main.js"></script>
+<!-- <script src="https://rudraworks.github.io/toastKing/main.js"></script> -->
+<script src="main.js"></script>
 <script>
+
     let designTypes=['moss','sunnyDays','anwar','plain','stripe','endlessRiver','instagram','ukraine','celestial','meredian']
     let infot = ['danger','warning','success','ok','info','prohibited']
    
@@ -203,9 +258,10 @@
             duration:tm+i,
             progressBarVis:true,
             borderVis:false,
+            shadowVis:true,
             type:infot[i%infot.length],
             design:designTypes[i],
-            stopOnFocus:true,
+            stopOnFocus:false,
             onClick:function(){},
             onDismiss:function(){}
         })
