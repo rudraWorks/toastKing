@@ -1,6 +1,6 @@
 let progressDiv = document.createElement('div')
 
-progressDiv.style.position="absolute"
+progressDiv.style.position="fixed"
 progressDiv.style.top="0"
 progressDiv.style.width="95%"
 progressDiv.style.display="flex"
@@ -83,7 +83,7 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     })
 
     t.style.width="90%"
-    t.style.marginTop="20px"
+    t.style.marginBottom="20px"
     t.style.display="flex"
     t.style.backgroundColor="skyblue"
     
