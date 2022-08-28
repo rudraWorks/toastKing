@@ -4,57 +4,213 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>Document</title>
+    <title>ToastKing</title>
+    <style>
+        body{
+            background-image: url("");
+        }
+        #heading{
+            text-align: center;
+            margin-top: 30px;
+            /* border: 1px solid black; */
+            /* background-color: bisque; */
+        }
+        .container{
+            /* border:1px solid black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .demo{
+            border: 1px dashed black;
+            margin: 10px;
+            /* margin-right: auto; */
+            padding: 10px;
+        }
+        .play{
+            margin: 10px;
+            /* margin-right: auto; */
+            padding: 10px;
+            width: 100px;
+            background-color: rgb(80, 233, 93);
+            text-align: center;
+            cursor: pointer;
+            border-radius: 20px;
+            color:white;
+            user-select: none;
+        }
+        pre{
+            margin-top: 30px;
+            border: 1px dashed black;
+            background-color: rgb(32, 30, 30);
+            color: white;
+        }
+        .container>div{
+            margin: 10px;
+            
+        }
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr,td,th{
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }   
+        #designs{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #designs>div{
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgb(162, 183, 209);
+            cursor: pointer;
+            user-select: none;
+        }
+        #types{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #types>div{
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgb(162, 183, 209);
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
 </head>
 <body>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sit recusandae fuga minima natus facilis aliquam pariatur aliquid voluptate. Consequuntur quaerat sapiente explicabo voluptatibus sint, dolorem abo eius quo?
-    <h1>Toast demo</h1>
+    <div id="heading"> <h1>ToastKing</h1>
+            <h4>best toast in the market!</h4>
+    </div>
     <br>
-    <button id="btn">click</button>
-    <h1>testing</h1>
 
-    <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-        Lorem s aperiam voluptate distinctio, nihil animi sequi recusandae fuga ducimus magni reiciendis molestiae! Eveniet dicta quo beatae autem incidunt, aut, earum at, praesentium dolorem delectus eaque.
-    </p>
+    <div class="container">
+
+        <div class="play" onclick="demo()">demo</div>
+
+        <div>
+            <h3 style="text-align: center;">All values of <i>design</i> attribute </h3>
+            <div id="designs">
+                <div onclick="toastKing({message:'moss',design:'moss'})">moss</div>
+                <div  onclick="toastKing({message:'sunnyDays',design:'sunnyDays'})">sunnyDays</div>
+                <div  onclick="toastKing({message:'anwar',design:'anwar'})">anwar</div>
+                <div  onclick="toastKing({message:'plain',design:'plain'})">plain</div>
+                <div  onclick="toastKing({message:'stripe',design:'stripe'})">stripe</div>
+                <div  onclick="toastKing({message:'endlessRiver',design:'endlessRiver'})">endlessRiver</div>
+                <div  onclick="toastKing({message:'instagram',design:'instagram'})">instagram</div>
+                <div  onclick="toastKing({message:'ukraine',design:'ukraine'})">ukraine</div>
+                <div  onclick="toastKing({message:'celestial',design:'celestial'})">celestial</div>
+                <div  onclick="toastKing({message:'meredian',design:'meredian'})">meredian</div>
+            </div>
+        </div>
+        
+        <div>
+            <h3>All values of <i>type</i> attribute, with <i>plain</i> design  </h3>
+            <div id="types">
+                <div onclick="toastKing({message:'danger',type:'danger'})">danger</div>
+                <div  onclick="toastKing({message:'warning',type:'warning'})">warning</div>
+                <div  onclick="toastKing({message:'success',type:'success'})">success</div>
+                <div  onclick="toastKing({message:'ok',type:'ok'})">ok</div>
+                <div  onclick="toastKing({message:'info',type:'info'})">info</div>
+                <div  onclick="toastKing({message:'prohibited',type:'prohibited'})">prohibited</div>
+            </div>
+        </div>
+
+        <div>
+            <pre>
+
+            toastKing({                  
+                message:'hello globe!',           
+                duration:5,
+                progressBarVis:true,
+                borderVis:false,
+                type:'success',
+                design:'plain',
+                stopOnFocus:true,
+                onClick:function(){},
+                onDismiss:function(){}
+            })
+            </pre>
+        </div>
+
+
+        <div>
+            <h3 style="text-align: center;">Default values</h3>
+            <table>
+                <tr>
+                    <th>Attribute</th><th>Value</th>
+                </tr>
+                <tr>
+                    <td>Message</td><td>""</td>
+                </tr>
+                <tr>
+                    <td>Duration</td><td>10</td>
+                </tr>
+                <tr>
+                    <td>progressBarVis</td><td>true</td>
+                </tr>
+                <tr>
+                    <td>borderVis</td><td>false</td>
+                </tr>
+                <tr>
+                    <td>type</td><td>"none"</td>
+                </tr>
+                <tr>
+                    <td>design</td><td>"plain"</td>
+                </tr>
+                <tr>
+                    <td>stopOnFocus</td><td>true</td>
+                </tr>
+                <tr>
+                    <td>onClick</td><td>function(){}</td>
+                </tr>
+                <tr>
+                    <td>onDismiss</td><td>function(){}</td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+
+
 </body>
-<script src="https://rudraworks.github.io/toastKing/main.js"></script>
+<script src="main.js"></script>
 <script>
-
-    let btn = document.getElementById('btn')
     let designTypes=['moss','sunnyDays','anwar','plain','stripe','endlessRiver','instagram','ukraine','celestial','meredian']
     let infot = ['danger','warning','success','ok','info','prohibited']
-
-    btn.addEventListener('click',()=>{
-        let tm=11
-        // notify({
-        //     message:"hello world!",
-        //     design:"plain"
-        // })
-        //designTypes.length
+   
+    function demo()
+    {   
+        let tm=1
         for(let i=0;i<designTypes.length;++i)
         toastKing({
-            duration:tm+i,
             message:designTypes[i],
+            duration:tm+i,
             progressBarVis:true,
+            borderVis:false,
             type:infot[i%infot.length],
             design:designTypes[i],
             stopOnFocus:true,
-            onClick:function(){
-                // location.href="https://google.com"
-            },
-            onDismiss:function(){
-                // alert('dismiss')
-               
-            }
+            onClick:function(){},
+            onDismiss:function(){}
         })
-
-    });
-    btn.click()
-</script> 
-</html>
-<!-- <style>
-    body{
-        background-color: aquamarine;
     }
-</style> -->
+   
+    
+</script>
+
+
+
+
+</html>

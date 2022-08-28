@@ -88,7 +88,7 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     t.style.backgroundColor="skyblue"
     
     if(borderVis)
-    t.style.border="1px solid "
+    t.style.border="1px solid black"
     t.style.boxShadow=" 5px 10px 9px #888888"
     t.style.color="white"
     t.style.fontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
@@ -264,7 +264,6 @@ function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onCl
     }
 
     type = infoTypes[type]
-    console.log(message,duration,progressBarVis,type,stopOnFocus,design)
 
     showToast(message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis)
 }
