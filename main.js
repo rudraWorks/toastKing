@@ -1,3 +1,6 @@
+/* this code is written for toastKing.js library, by rudra pratap singh, github-rudraWorks */
+/* https://rudraworks.github.io/toastKing/ */
+
 let progressDiv = document.createElement('div')
 
 progressDiv.style.position="fixed"
@@ -162,7 +165,8 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
         t.style.background="skyblue"
         timeLeft.style.background="gray"
     }
-
+/* this code is written for toastKing.js library, by rudra pratap singh, github-rudraWorks */
+/* https://rudraworks.github.io/toastKing/ */
     closeBtn.textContent="❌" 
     closeBtn.style.cursor="pointer"
     closeBtn.style.marginLeft="auto"
@@ -221,6 +225,9 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     msgType.style.padding="1px"
     msgType.style.fontSize="20px"
 
+    /* this code is written for toastKing.js library, by rudra pratap singh, github-rudraWorks */
+/* https://rudraworks.github.io/toastKing/ */
+
     msgMessage.textContent=msg
     msgMessage.style.padding="1px"
     msgMessage.style.display="flex"
@@ -274,3 +281,5 @@ function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onCl
     showToast(message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis)
 }
 
+/* this code is written for toastKing.js library, by rudra pratap singh, github-rudraWorks */
+/* https://rudraworks.github.io/toastKing/ */
