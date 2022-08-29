@@ -67,15 +67,14 @@
             padding: 5px;
             text-align: center;
         }   
-        #designs{
+        .examples{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
-        #designs>div{
-            /* border: 1px solid black; */
+        .examples>div{
             margin: 5px;
             padding: 10px;
             background-color:burlywood;
@@ -85,27 +84,7 @@
             min-width: 90px;
             text-align: center;
         }
-        #designs>div:hover{
-            background-color: rgb(177, 147, 109);
-        }
-        #types{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        #types>div{
-            margin: 5px;
-            padding: 10px;
-            background-color:burlywood;
-            cursor: pointer;
-            user-select: none;
-            border-radius: 15px;
-            min-width: 90px;
-            text-align: center;
-        }
-        #types>div:hover{
+        .examples>div:hover{
             background-color: rgb(177, 147, 109);
         }
         #title{
@@ -162,7 +141,7 @@
 
         <div>
             <h3 style="text-align: center;">All values of <i>design</i> attribute </h3>
-            <div id="designs">
+            <div class="examples">
                 <div onclick="toastKing({message:'moss',design:'moss'})">moss</div>
                 <div  onclick="toastKing({message:'sunnyDays',design:'sunnyDays'})">sunnyDays</div>
                 <div  onclick="toastKing({message:'anwar',design:'anwar'})">anwar</div>
@@ -178,7 +157,7 @@
         
         <div>
             <h3 style="text-align: center;">All values of <i>type</i> attribute, with <i>plain</i> design  </h3>
-            <div id="types">
+            <div class="examples">
                 <div onclick="toastKing({message:'danger',type:'danger'})">danger</div>
                 <div  onclick="toastKing({message:'warning',type:'warning'})">warning</div>
                 <div  onclick="toastKing({message:'success',type:'success'})">success</div>
@@ -188,7 +167,53 @@
             </div>
         </div>
 
+        <div>
+            <h3 style="text-align: center;"><i>borderVis</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'border is visible',type:'none',borderVis:true,design:'sunnyDays'})">borderVis:true</div>
+                <div onclick="toastKing({message:'border is visible',type:'none',borderVis:false,design:'sunnyDays'})">borderVis:false</div>
+            </div>
+        </div>
 
+        <div>
+            <h3 style="text-align: center;"><i>shadowVis</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'shadowVis:true',type:'none',shadowVis:true})">shadowVis:true</div>
+                <div onclick="toastKing({message:'shadowVis:false',type:'none',shadowVis:false})">shadowVis:false</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="text-align: center;"><i>stopOnFocus</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'stopOnFocus:true',type:'none',stopOnFocus:true})">stopOnFocus:true</div>
+                <div onclick="toastKing({message:'stopOnFocus:false',type:'none',stopOnFocus:false})">stopOnFocus:false</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="text-align: center;"><i>progressBarVis</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'progressBarVis:true',type:'none',progressBarVis:true})">progressBarVis:true</div>
+                <div onclick="toastKing({message:'progressBarVis:false',type:'none',progressBarVis:false})">progressBarVis:false</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="text-align: center;"><i>onClick</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'onClick:function(){alert(\'you clicked!\')}',type:'none',onClick:function(){alert('you clicked!')}})">onClick:function(){alert('you clicked!')}</div>
+                <div onclick="toastKing({message:'onClick:function(){}',type:'none',onClick:function(){}})">onClick:function(){}</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="text-align: center;"><i>onDismiss</i> attribute </h3>
+            <div class="examples">
+                <div onclick="toastKing({message:'onDismiss:function(){alert(\'you dismissed!\')}',type:'none',onDismiss:function(){alert('you dismissed!')}})">onDismiss:function(){alert('you dismissed!')}</div>
+                <div onclick="toastKing({message:'onDismiss:function(){}',type:'none',onDismiss:function(){}})">onDismiss:function(){}</div>
+            </div>
+        </div>
 
         <div>
             <h3 style="text-align: center;">Default values of the attributes</h3>
@@ -201,7 +226,7 @@
                     <td>Message</td><td>""</td>
                 </tr>
                 <tr>
-                    <td>Duration</td><td>10</td>
+                    <td>Duration</td><td>5</td>
                 </tr>
                 <tr>
                     <td>progressBarVis</td><td>true</td>
@@ -246,7 +271,8 @@
     <br><br>
 
 </body>
-<script src="https://rudraworks.github.io/toastKing/main.js"> </script>
+<!-- <script src="https://rudraworks.github.io/toastKing/main.js"> </script> -->
+<script src="main.js"></script>
 <script>
 
     let designTypes=['moss','sunnyDays','anwar','plain','stripe','endlessRiver','instagram','ukraine','celestial','meredian']

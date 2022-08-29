@@ -100,7 +100,7 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     else t.style.marginBottom="10px"
     t.style.color="white"
     t.style.fontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
-    t.addEventListener('click',onClick)
+
 
     if(design=='moss'){
     t.style.background="#134E5E"
@@ -235,6 +235,7 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     msgMessage.style.alignItems="center"
     msgMessage.style.width="100%"
 
+    msgBox.addEventListener('click',onClick)
     msgBox.appendChild(msgContent)
 
     if(progressBarVis)
@@ -260,7 +261,7 @@ infoTypes['none']=''
 function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis})
 {   
     
-    if(duration===undefined) duration=10    
+    if(duration===undefined) duration=5    
     if(message===undefined) message=''
     if(progressBarVis===undefined)progressBarVis=true
     if(borderVis===undefined)borderVis=false 
@@ -277,7 +278,6 @@ function toastKing({message,duration,progressBarVis,type,stopOnFocus,design,onCl
     }
 
     type = infoTypes[type]
-
     showToast(message,duration,progressBarVis,type,stopOnFocus,design,onClick,onDismiss,borderVis,shadowVis)
 }
 
