@@ -14,6 +14,7 @@ progressDiv.style.left="0"
 progressDiv.style.right="0"
 progressDiv.style.margin="auto"
 progressDiv.style.userSelect="none"
+progressDiv.style.zIndex="81";
 
 document.body.prepend(progressDiv)
 
@@ -178,6 +179,7 @@ let showToast = (msg,duration,progressBarVis,type,stopOnFocus,design,onClick,onD
     closeBtn.style.justifyContent="center"
     closeBtn.style.alignItems="center"
     closeBtn.style.borderLeft="1px dashed black"
+    
 
     closeBtn.addEventListener('click',()=>{
 
